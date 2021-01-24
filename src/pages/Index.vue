@@ -35,9 +35,10 @@
                 <horizontal-btn>
                   <q-btn
                     no-caps
-                    color="white"
+                    :color="$q.dark.isActive?'grey-9':'white'"
                     class="q-mx-sm"
-                    text-color="primary"
+                                        :text-color="$q.dark.isActive?'white':'primary'"
+
                     push
                     v-for="(opt, index) in marketOpt"
                     :key="index"
