@@ -7,7 +7,7 @@
  -->
         <router-link
           tag="span"
-          :to="$route.path+'#'"
+          :to="$route.path + '#'"
           class="float-right q-pt-sm text-grey-6 text-subtitle2 cursor-pointer text-weight-bold"
           >see all</router-link
         >
@@ -19,7 +19,7 @@
       <!-- <router-link
           :to="category.title == 'music' ||category.title == 'Music' ?'/genrebrowse':'post/'+category.title"
       >-->
-      <div class="slider">
+      <div class="slider" v-if="items.length > 0">
         <div
           class="item"
           :style="
@@ -40,10 +40,46 @@
           v-for="(item, indx) in items"
           :key="indx"
         >
-          <product-card :flat="false"></product-card>
+          <product-card :product="item" :flat="false"></product-card>
           <!-- </router-link> -->
         </div>
       </div>
+      <!--  -->
+      <div class="slider" v-else>
+        <div
+          class="item"
+          :style="
+            `width:${
+              $q.screen.width < 300
+                ? 'calc(100vw/2)'
+                : $q.screen.width < 400
+                ? 'calc(100vw/2.3)'
+                : $q.screen.width == 411
+                ? 'calc(100vw/2.5)'
+                : $q.screen.width < 735
+                ? 'calc(100vw/3.4)'
+                : $q.screen.width < 1000
+                ? 'calc(100vw/4.4)'
+                : 'calc(100vw/5.6)'
+            }`
+          "
+          v-for="(item, indx) in 10"
+          :key="indx"
+        >
+          <q-card flat bordered style="border-radius:8px;">
+            <div class="q-pa-xs">
+              <q-skeleton class="card" height="120px" />
+            </div>
+            <q-card-section>
+              <q-skeleton type="text" class="text-subtitle1" />
+              <q-skeleton type="text" width="50%" class="text-subtitle1" />
+              <q-skeleton type="text" class="text-caption" />
+            </q-card-section>
+          </q-card>
+          <!-- </router-link> -->
+        </div>
+      </div>
+      <!--  -->
     </div>
   </div>
 </template>
@@ -54,7 +90,7 @@ export default {
   props: {
     groupName: { type: String, required: true },
     routeName: {
-      type: String,
+      type: String
       // required: true
     },
     items: {

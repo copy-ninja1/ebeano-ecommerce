@@ -3,11 +3,12 @@
     <div class="row justify-center q-col-gutter-md">
       <div class="col-xs-12 col-md-10">
         <div class="row justify-center q-pa-sm">
-          <div class="col-xs-12 col-md-9">
+          <div class="col-xs-12 col-md-10">
             <q-card flat class="q-my-lg card">
               <q-carousel
                 animated
                 control-color="amber"
+                :height="$q.screen.lt.md ? '300px' : '400px'"
                 navigation-icon="radio_button_unchecked"
                 swipeable
                 arrows
@@ -30,16 +31,19 @@
                   img-src="https://ebeanomarket.com/assets/images/banners/slider1.jpg"
                 />
               </q-carousel>
-              <div class="q-pa-md q-gutter-sm">
-                <q-btn
-                  no-caps
-                  color="white"
-                  text-color="primary"
-                  push
-                  v-for="(opt, index) in marketOpt"
-                  :key="index"
-                  >{{ opt.title }}</q-btn
-                >
+              <div :class="{ 'q-pa-sm': $q.screen.gt.sm }">
+                <horizontal-btn>
+                  <q-btn
+                    no-caps
+                    color="white"
+                    class="q-mx-sm"
+                    text-color="primary"
+                    push
+                    v-for="(opt, index) in marketOpt"
+                    :key="index"
+                    >{{ opt.title }}</q-btn
+                  >
+                </horizontal-btn>
               </div>
             </q-card>
           </div>
@@ -49,13 +53,32 @@
         </section>
         <section class="q-my-md q-pa-sm">
           <h2 class="text-h4 text-bold">Featured Products</h2>
-          <div class="row q-col-gutter-md">
+          <div class="row q-col-gutter-md" v-if="items.length > 0">
             <div
               class="col-xs-6 col-sm-4 col-md-55"
               v-for="(product, indx) in items"
               :key="indx"
             >
-              <product-card :flat="false"></product-card>
+              <product-card :flat="false" :product="product"></product-card>
+            </div>
+          </div>
+
+          <div class="row q-col-gutter-md" v-else>
+            <div
+              class="col-xs-6 col-sm-4 col-md-55"
+              v-for="(product, indx) in 12"
+              :key="indx"
+            >
+              <q-card flat class="card" style="max-width: 300px">
+                <div class="q-pa-xs">
+                  <q-skeleton height="150px" />
+                </div>
+                <q-card-section>
+                  <q-skeleton type="text" class="text-subtitle1" />
+                  <q-skeleton type="text" width="50%" class="text-subtitle1" />
+                  <q-skeleton type="text" class="text-caption" />
+                </q-card-section>
+              </q-card>
             </div>
           </div>
         </section>
@@ -73,7 +96,8 @@ export default {
   name: "PageIndex",
   components: {
     ProductSection,
-    ProductCard
+    ProductCard,
+    HorizontalBtn: () => import("components/Horizontal-btn")
   },
   data() {
     return {
@@ -93,8 +117,11 @@ export default {
     getProducts() {
       for (var d = 0; d < 12; d++) {
         this.items.push({
-          title: faker.name.jobType(),
-          imageSrc: "https://placeimg.com/500/400/people?t=" + Math.random()
+          title: faker.commerce.productName(),
+          product: faker.commerce.productName(),
+          price: faker.commerce.price(),
+
+          imageSrc: "https://placeimg.com/500/400/tech?t=" + Math.random()
         });
       }
     }
@@ -102,7 +129,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.getProducts();
-    }, 1000);
+    }, 4000);
   }
 };
 </script>
