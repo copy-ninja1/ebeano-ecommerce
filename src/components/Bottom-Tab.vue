@@ -17,20 +17,13 @@
         />
         <q-route-tab
           :icon="
-            $route.fullPath == '/##' ? 'mdi-magnify' : 'mdi-magnify-scan'
+            $route.fullPath == '/##' ? 'mdi-search-web' : 'mdi-magnify'
           "
           label="search"
           active-class="text-primary"
           to="/##"
           exact
         />
-        <!-- <q-route-tab
-          icon="mdi-compare-horizontal"
-          label="P2p trade"
-          active-class="text-primary"
-          to="/p2p-trade"
-          exact
-        /> -->
         <q-route-tab
           :icon="
             $route.fullPath == '/#' ? 'mdi-account' : 'mdi-account-outline'

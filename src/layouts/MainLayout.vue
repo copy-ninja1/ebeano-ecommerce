@@ -2,26 +2,22 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-white text-grey-9">
       <q-toolbar>
-        <q-btn
+        <!-- <q-btn
           flat
           dense
           round
           icon="menu"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        /> -->
+          <img style="width:100px"  src="https://ebeanomarket.com/assets/images/ebeano-logo.png" />
+        <q-space></q-space>
+        <q-btn flat round dense icon="mdi-cart-outline" />
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
       content-class="bg-grey-1"
     >
