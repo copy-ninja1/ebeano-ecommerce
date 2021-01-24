@@ -8,7 +8,12 @@
       />
     </div>
     <q-card-section :class="{ 'q-pa-sm': $q.screen.lt.md }">
-      <div class="text-h6 text-grey-8">{{ product.title }}</div>
+      <div
+        class="text-h6 "
+        :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-grey-8'}`"
+      >
+        {{ product.title }}
+      </div>
       <div class="text-subtitle2 text-primary">${{ product.price }}</div>
     </q-card-section>
   </q-card>
