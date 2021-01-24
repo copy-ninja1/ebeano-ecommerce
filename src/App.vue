@@ -10,7 +10,7 @@ export default {
     // Bazed is a key for knowing if the home page data is loaded in session
     // this.loadingDialog = true;
 
-    this.$q.addressbarColor.set("#fff");
+    this.$q.addressbarColor.set('#fff')
     this.$q.dark.set(this.$q.localStorage.getItem("ebeano-thm"));
   },
   watch: {

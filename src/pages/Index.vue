@@ -8,7 +8,7 @@
               <q-carousel
                 animated
                 control-color="amber"
-                :height="$q.screen.lt.md ? '300px' : '400px'"
+                :height="$q.screen.lt.md ? '200px' : '400px'"
                 navigation-icon="radio_button_unchecked"
                 swipeable
                 arrows
