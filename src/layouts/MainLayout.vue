@@ -14,15 +14,17 @@
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         /> -->
-        <img
-          style="width:100px"
-          src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
-        />
+        <router-link to="/">
+          <img
+            style="width:100px"
+            src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
+        /></router-link>
         <q-space></q-space>
         <q-btn
           flat
           round
           dense
+          to="/cart-overview"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-cart-outline"
         />

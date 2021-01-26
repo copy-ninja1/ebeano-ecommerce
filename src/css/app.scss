@@ -17,18 +17,23 @@
   border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06) !important;
 }
-
 .card {
   border: 1px solid $grey-2;
   border-radius: 8px !important;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12) !important;
   transition: box-shadow 0.2s ease !important;
 }
+.border-bold {
+  border: 1px solid $grey-4;
+}
 body.body--dark {
   .custom-shadow {
     border: 1px solid $grey-8;
   }
-  .card{
+  .card {
+    border: 1px solid $grey-7;
+  }
+  .border-bold{
     border: 1px solid $grey-7;
   }
 }

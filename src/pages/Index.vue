@@ -130,7 +130,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.getProducts();
-    }, 4000);
+    }, 100);
   }
 };
 </script>
