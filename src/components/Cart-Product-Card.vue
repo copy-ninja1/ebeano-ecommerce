@@ -112,10 +112,11 @@
                   icon="mdi-minus"
                 />
                 <q-btn
-                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   push
-                  disable
-                  label="1"
+                :color="$q.dark.isActive ? 'grey-9' : 'white'"
+                :text-color="$q.dark.isActive ? 'white' : 'primary'"
+                disable
+                label="1"
                 />
                 <q-btn
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"

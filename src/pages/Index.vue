@@ -31,6 +31,8 @@
                   img-src="https://ebeanomarket.com/assets/images/banners/slider1.jpg"
                 />
               </q-carousel>
+            
+            </q-card>
               <div :class="{ 'q-pa-sm': $q.screen.gt.sm }">
                 <horizontal-btn>
                   <q-btn
@@ -46,7 +48,6 @@
                   >
                 </horizontal-btn>
               </div>
-            </q-card>
           </div>
         </div>
         <section class="q-mt-sm q-mb-lg">

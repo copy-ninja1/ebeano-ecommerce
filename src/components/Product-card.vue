@@ -31,11 +31,11 @@
             </q-item-label>
           </q-item-section>
 
-          <q-item-section top side>
+          <!-- <q-item-section top side>
             <div class="text-grey-8 q-gutter-xs">
               <q-btn class="gt-xs" size="12px" flat dense round icon="delete" />
             </div>
-          </q-item-section>
+          </q-item-section> -->
         </q-item>
       </q-list>
   </q-card>

@@ -10,6 +10,12 @@
   border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06) !important;
 }
+.border-input-bold {
+  border: 1px solid $grey-6;
+}
+.border-input-bold:focus-within{
+  border-color: $amber-9 !important;
+}
 .disabled-input {
   border-style: dashed !important;
 }
@@ -26,6 +32,7 @@
 .border-bold {
   border: 1px solid $grey-4;
 }
+
 body.body--dark {
   .custom-shadow {
     border: 1px solid $grey-8;

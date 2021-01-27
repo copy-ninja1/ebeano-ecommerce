@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <div class="row justify-center ">
+    <div class="row justify-center" style="margin-bottom:150px">
       <div class="col-xs-12 col-md-10">
         <div
           class="row no-wrap items-center q-my-md q-pa-sm  rounded-borders border-bold"
@@ -20,15 +20,25 @@
 
           <div class="q-gutter-sm">
             <q-btn
+              color="primary"
+              v-if="$q.screen.gt.sm"
+              @click="(cartCostDialog = true), (costDialogPosition = 'top')"
+              >cost</q-btn
+            >
+            <q-btn
               round
               color="white"
               text-color="grey-8"
+              :disable="grid"
+              :flat="grid"
               icon="mdi-grid-large"
               @click="changeLayout()"
             ></q-btn>
             <q-btn
               round
               color="white"
+              :disable="!grid"
+              :flat="!grid"
               text-color="grey-8"
               icon="mdi-format-list-bulleted-square"
               @click="changeLayout()"
@@ -53,6 +63,45 @@
         </div>
       </div>
     </div>
+    <q-dialog v-model="cartCostDialog" seamless :position="costDialogPosition">
+      <q-card style="width: 100vw">
+        <q-btn
+          icon="mdi-close"
+          color="red"
+          round
+          flat
+          v-if="$q.screen.gt.sm"
+          class="gt-sm"
+          @click="cartCostDialog = !cartCostDialog"
+        ></q-btn
+        >
+        <q-card-section class="row items-center">
+          <div class="col-xs-12">
+            <div>
+              <span>shipping fee</span>
+              <span class="float-right">$30</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div>
+              <span>subtotal</span>
+              <span class="float-right">$730</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="text-bold">
+              <span>Total</span>
+              <span class="float-right">$760.00</span>
+            </div>
+          </div>
+        </q-card-section>
+        <q-card-actions>
+          <q-btn class="full-width" color="primary" push text-color="white"
+            >Checkout</q-btn
+          >
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 <script>
@@ -67,8 +116,16 @@ export default {
   data() {
     return {
       items: [],
-      grid: true
+      grid: true,
+      cartCostDialog: this.$q.screen.lt.md,
+      // costDialogPosition: "bottom"
     };
+  },
+  computed: {
+    costDialogPosition() {
+      if (this.$q.screen.lt.md) return "bottom";
+      else return "top";
+    }
   },
   methods: {
     getProducts() {
