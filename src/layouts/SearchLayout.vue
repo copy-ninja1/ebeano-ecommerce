@@ -146,12 +146,13 @@ export default {
       leftDrawerOpen: false,
       search: "",
       marketOpt: [
-        { title: "Ebeano Market Place" },
-        { title: "Ebeano Artisans" },
-        { title: "Ebeano Real Estate" },
-        { title: "Ebeano Utility" },
-        { title: "Ebeano Automobile" },
-        { title: "Ebeano Bookings" }
+        { title: "cloths" },
+        { title: "phones" },
+        { title: "laptops" },
+        { title: "nails" },
+        { title: "makeup kit" },
+        { title: "shoes" },
+        { title: "office tables" }
       ]
     };
   },

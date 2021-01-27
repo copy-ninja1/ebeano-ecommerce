@@ -8,20 +8,21 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" />
         <q-btn
-          flat
+          flat class="lt-md"
           round
           dense
           to="/search"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-magnify"
         />
-        <q-space></q-space>
+        <q-space  class="lt-md"></q-space>
 
         <router-link to="/">
           <img
             style="width:100px"
             src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
         /></router-link>
+        <q-space  class="gt-sm"></q-space>
 
         <div
           class="custom-shadow q-px-sm disabled-input border-input-bold gt-sm"
@@ -36,7 +37,7 @@
             v-model="search"
           >
             <template v-slot:append>
-              <q-btn round dense flat icon="mdi-magnify" />
+              <q-btn round dense to="/search" flat icon="mdi-magnify" />
             </template>
           </q-input>
         </div>
