@@ -68,7 +68,11 @@
         <!-- <q-space></q-space> -->
 
         <q-toolbar-title class="text-center">
-          Search
+           <router-link to="/">
+          <img
+            style="width:100px"
+            src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
+        /></router-link>
         </q-toolbar-title>
         <!-- <q-space></q-space> -->
         <q-btn
