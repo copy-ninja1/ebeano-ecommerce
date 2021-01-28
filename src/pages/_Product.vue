@@ -2,6 +2,16 @@
   <q-page padding>
     <div class="row justify-center">
       <div class="col-xs-12 col-md-10">
+        <div class="q-my-sm q-px-md">
+          <q-breadcrumbs>
+            <template v-slot:separator>
+              <q-icon size="1.5em" name="chevron_right" color="primary" />
+            </template>
+            <q-breadcrumbs-el to="/" label="Home" />
+            <q-breadcrumbs-el label="shoe" />
+            <q-breadcrumbs-el :label="$route.params.productTitle" />
+          </q-breadcrumbs>
+        </div>
         <div class="row justify-around q-col-gutter-md">
           <div class="col-xs-12 col-md-5">
             <div class="row justify-center q-col-gutter-md">
@@ -84,6 +94,10 @@
             </div>
           </div>
         </div>
+        <section class="q-my-md" >
+                <product-info class="q-pb-md"></product-info>
+        </section>
+
         <section class="lt-md" v-if="$q.screen.lt.md">
           <product-section
             :products="items"
@@ -131,7 +145,10 @@ import faker from "faker";
 export default {
   components: {
     ProductSection: () => import("components/Product-Section"),
-    ProductCard: () => import("components/Product-card")
+    ProductCard: () => import("components/Product-card"),
+        productInfo: () => import("components/Product/Review/Product-Info")
+
+
   },
   data() {
     return {
