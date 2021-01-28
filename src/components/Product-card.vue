@@ -1,11 +1,13 @@
 <template>
   <q-card :bordered="bordered" :flat="flat" :class="contentClass">
     <div class="q-pa-xs" style="height:160px">
-      <img
+     <router-link :to="`/${product.title}`">
+        <img
         class="rounded-borders full-width full-height"
         :class="{ card: flat }"
         :src="product.imageSrc"
       />
+     </router-link>
     </div>
     <q-list>
       <q-item  :class="{ 'q-px-xs': $q.screen.lt.md }">

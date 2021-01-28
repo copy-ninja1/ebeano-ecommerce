@@ -2,7 +2,7 @@
   <div>
     <q-card class="other-shadow gt-sm">
       <q-card-section>
-        <div class="text-h6 q-mb-sm text-bold">New Products</div>
+        <div class="text-h6 q-mb-sm text-bold">{{ cardTitle }}</div>
         <div class="row q-col-gutter-md" v-if="products.length > 0">
           <div
             class="col-xs-12 col-sm-6 col-md-3 col-md-55"
@@ -33,9 +33,10 @@
       </q-card-section>
     </q-card>
     <div class="lt-md">
-      <horizontal-scroll groupName="New Product" :items="products">
+      <horizontal-scroll :groupName="cardTitle" :items="products">
       </horizontal-scroll>
     </div>
+    
   </div>
 </template>
 <script>
@@ -47,6 +48,10 @@ export default {
   props: {
     products: {
       type: Array
+    },
+    cardTitle: {
+      type: String,
+      required: true
     }
   },
   data() {

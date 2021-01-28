@@ -57,7 +57,7 @@
             :label="'$' + 3 * product.price"
           />
         </div>
-        <q-btn-group spread style="min-width:140px">
+        <q-btn-group spread >
           <q-btn
             :color="$q.dark.isActive ? 'grey-9' : 'white'"
             :text-color="$q.dark.isActive ? 'white' : 'primary'"

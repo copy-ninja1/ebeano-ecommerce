@@ -48,7 +48,7 @@
           </div>
         </div>
         <section class="q-mt-sm q-mb-lg">
-          <product-section :products="items"></product-section>
+          <product-section :products="items" cardTitle="New Products"></product-section>
         </section>
         <section class="q-my-md q-pa-sm">
           <h2 class="text-h4 text-bold">Featured Products</h2>
