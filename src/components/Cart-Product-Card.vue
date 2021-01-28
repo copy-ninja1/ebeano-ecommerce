@@ -27,44 +27,55 @@
             >
               <!-- <span class="cursor-pointer">${{  }}</span> -->
               <div class="q-my-sm">
-                <span class="text-grey-7 text-caption ">
-                  1x300
+                <span class="text-grey-7 text-caption text-bold">
+                  {{ product.price }}
                 </span>
-                <q-badge
-                  outline
-                  class="text-bold"
-                  color="primary"
-                  :label="product.price"
-                />
               </div>
             </q-item-label>
-
-            <q-item-label>
-              <q-btn-group  spread>
-                <q-btn
-                  
-                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                  :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  icon="mdi-minus"
-                />
-                <q-btn
-                  
-                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                  :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  disable
-                  label="1"
-                />
-                <q-btn
-                  
-                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                  :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  icon="mdi-plus"
-                />
-              </q-btn-group>
-            </q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-btn
+              color="negative"
+              round
+              flat
+              icon="mdi-trash-can-outline"
+            ></q-btn>
           </q-item-section>
         </q-item>
       </q-list>
+      <q-separator></q-separator>
+
+      <q-card-actions align="between" :class="{ 'q-px-md': $q.screen.gt.sm }">
+        <div class="q-my-sm">
+          <span class="text-grey-7 text-caption ">
+            3x${{ product.price }}
+          </span>
+          <q-badge
+            outline
+            class="text-bold"
+            color="primary"
+            :label="'$' + 3 * product.price"
+          />
+        </div>
+        <q-btn-group spread style="min-width:140px">
+          <q-btn
+            :color="$q.dark.isActive ? 'grey-9' : 'white'"
+            :text-color="$q.dark.isActive ? 'white' : 'primary'"
+            icon="mdi-minus"
+          />
+          <q-btn
+            :color="$q.dark.isActive ? 'grey-9' : 'white'"
+            :text-color="$q.dark.isActive ? 'white' : 'primary'"
+            disable
+            label="1"
+          />
+          <q-btn
+            :color="$q.dark.isActive ? 'grey-9' : 'white'"
+            :text-color="$q.dark.isActive ? 'white' : 'primary'"
+            icon="mdi-plus"
+          />
+        </q-btn-group>
+      </q-card-actions>
     </q-card>
     <q-card v-else :bordered="bordered" :flat="flat" :class="contentClass">
       <q-list>
@@ -93,74 +104,54 @@
             </q-item-label>
             <q-item-label
               ><div class="q-my-sm">
-                <span class="text-grey-7 text-caption ">
-                  1x300
+                <span class="text-grey-7 text-bold text-caption ">
+                  {{ product.price }}
                 </span>
-                <q-badge
-                  outline
-                  class="text-bold"
-                  color="primary"
-                  :label="product.price"
-                /></div
-            ></q-item-label>
-            <q-item-label class="gt-sm">
-              <q-btn-group  spread>
-                <q-btn
-                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                  :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  
-                  icon="mdi-minus"
-                />
-                <q-btn
-                  
-                :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                disable
-                label="1"
-                />
-                <q-btn
-                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                  :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  
-                  icon="mdi-plus"
-                />
-              </q-btn-group>
-            </q-item-label>
+              </div></q-item-label
+            >
           </q-item-section>
-          <q-item-section class="lt-md" style="padding-left:6px" side>
-            <!-- <div class="text-grey-8 q-gutter-xs">
-              <q-btn  size="12px" flat dense round icon="delete" />
-            </div> -->
-            <q-btn-group  spread>
-              <q-btn
-                
-                round
-                :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                size="sm"
-                icon="mdi-minus"
-              />
-              <q-btn
-                
-                round
-                :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                size="sm"
-                disable
-                label="1"
-              />
-              <q-btn
-                
-                round
-                :color="$q.dark.isActive ? 'grey-9' : 'white'"
-                :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                size="sm"
-                icon="mdi-plus"
-              />
-            </q-btn-group>
+          <q-item-section side top>
+            <q-btn
+              color="negative"
+              round
+              flat
+              icon="mdi-trash-can-outline"
+            ></q-btn>
           </q-item-section>
         </q-item>
       </q-list>
+      <q-separator></q-separator>
+      <q-card-actions align="between" :class="{ 'q-px-md': $q.screen.gt.sm }">
+        <div class="q-my-sm">
+          <span class="text-grey-7 text-caption ">
+            3x${{ product.price }}
+          </span>
+          <q-badge
+            outline
+            class="text-bold"
+            color="primary"
+            :label="'$' + 3 * product.price"
+          />
+        </div>
+        <q-btn-group spread style="min-width:140px">
+          <q-btn
+            :color="$q.dark.isActive ? 'grey-9' : 'white'"
+            :text-color="$q.dark.isActive ? 'white' : 'primary'"
+            icon="mdi-minus"
+          />
+          <q-btn
+            :color="$q.dark.isActive ? 'grey-9' : 'white'"
+            :text-color="$q.dark.isActive ? 'white' : 'primary'"
+            disable
+            label="1"
+          />
+          <q-btn
+            :color="$q.dark.isActive ? 'grey-9' : 'white'"
+            :text-color="$q.dark.isActive ? 'white' : 'primary'"
+            icon="mdi-plus"
+          />
+        </q-btn-group>
+      </q-card-actions>
     </q-card>
   </div>
 </template>
