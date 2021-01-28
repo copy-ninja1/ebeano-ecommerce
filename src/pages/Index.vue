@@ -31,23 +31,20 @@
                   img-src="https://ebeanomarket.com/assets/images/banners/slider1.jpg"
                 />
               </q-carousel>
-            
             </q-card>
-              <div :class="{ 'q-pa-sm': $q.screen.gt.sm }">
-                <horizontal-btn>
-                  <q-btn
-                    no-caps
-                    :color="$q.dark.isActive?'grey-9':'white'"
-                    class="q-mx-sm"
-                                        :text-color="$q.dark.isActive?'white':'primary'"
-
-                    push
-                    v-for="(opt, index) in marketOpt"
-                    :key="index"
-                    >{{ opt.title }}</q-btn
-                  >
-                </horizontal-btn>
-              </div>
+            <div :class="{ 'q-pa-sm': $q.screen.gt.sm }">
+              <horizontal-btn>
+                <q-btn
+                  no-caps
+                  :color="$q.dark.isActive ? 'grey-9' : 'white'"
+                  class="q-mx-sm"
+                  :text-color="$q.dark.isActive ? 'white' : 'primary'"
+                  v-for="(opt, index) in marketOpt"
+                  :key="index"
+                  >{{ opt.title }}</q-btn
+                >
+              </horizontal-btn>
+            </div>
           </div>
         </div>
         <section class="q-mt-sm q-mb-lg">

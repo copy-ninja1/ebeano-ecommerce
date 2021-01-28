@@ -96,7 +96,7 @@
           </div>
         </q-card-section>
         <q-card-actions>
-          <q-btn class="full-width" color="primary" push text-color="white"
+          <q-btn class="full-width" color="primary"  text-color="white"
             >Checkout</q-btn
           >
         </q-card-actions>

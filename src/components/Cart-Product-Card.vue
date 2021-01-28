@@ -40,22 +40,22 @@
             </q-item-label>
 
             <q-item-label>
-              <q-btn-group push spread>
+              <q-btn-group  spread>
                 <q-btn
-                  push
+                  
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
                   icon="mdi-minus"
                 />
                 <q-btn
-                  push
+                  
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
                   disable
                   label="1"
                 />
                 <q-btn
-                  push
+                  
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
                   icon="mdi-plus"
@@ -104,15 +104,15 @@
                 /></div
             ></q-item-label>
             <q-item-label class="gt-sm">
-              <q-btn-group push spread>
+              <q-btn-group  spread>
                 <q-btn
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  push
+                  
                   icon="mdi-minus"
                 />
                 <q-btn
-                  push
+                  
                 :color="$q.dark.isActive ? 'grey-9' : 'white'"
                 :text-color="$q.dark.isActive ? 'white' : 'primary'"
                 disable
@@ -121,7 +121,7 @@
                 <q-btn
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
-                  push
+                  
                   icon="mdi-plus"
                 />
               </q-btn-group>
@@ -131,9 +131,9 @@
             <!-- <div class="text-grey-8 q-gutter-xs">
               <q-btn  size="12px" flat dense round icon="delete" />
             </div> -->
-            <q-btn-group push spread>
+            <q-btn-group  spread>
               <q-btn
-                push
+                
                 round
                 :color="$q.dark.isActive ? 'grey-9' : 'white'"
                 :text-color="$q.dark.isActive ? 'white' : 'primary'"
@@ -141,7 +141,7 @@
                 icon="mdi-minus"
               />
               <q-btn
-                push
+                
                 round
                 :color="$q.dark.isActive ? 'grey-9' : 'white'"
                 :text-color="$q.dark.isActive ? 'white' : 'primary'"
@@ -150,7 +150,7 @@
                 label="1"
               />
               <q-btn
-                push
+                
                 round
                 :color="$q.dark.isActive ? 'grey-9' : 'white'"
                 :text-color="$q.dark.isActive ? 'white' : 'primary'"
