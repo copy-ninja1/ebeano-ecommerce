@@ -66,7 +66,6 @@
     <q-page-container :class="{ 'bg-grey-2': !$q.dark.isActive }">
       <router-view />
     </q-page-container>
-    <bottom-tab v-if="$route.path.split('/').length < 3"></bottom-tab>
   </q-layout>
 </template>
 

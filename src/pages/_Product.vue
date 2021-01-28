@@ -74,6 +74,7 @@
 
               <q-btn-group>
                 <q-btn
+                  @click="decCount()"
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
                   icon="mdi-minus"
@@ -82,9 +83,10 @@
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
                   disable
-                  label="1"
+                  :label="numberOfItems"
                 />
                 <q-btn
+                  @click="inccount()"
                   :color="$q.dark.isActive ? 'grey-9' : 'white'"
                   :text-color="$q.dark.isActive ? 'white' : 'primary'"
                   icon="mdi-plus"
@@ -94,8 +96,8 @@
             </div>
           </div>
         </div>
-        <section class="q-my-md" >
-                <product-info class="q-pb-md"></product-info>
+        <section class="q-my-md">
+          <product-info class="q-pb-md"></product-info>
         </section>
 
         <section class="lt-md" v-if="$q.screen.lt.md">
@@ -146,13 +148,12 @@ export default {
   components: {
     ProductSection: () => import("components/Product-Section"),
     ProductCard: () => import("components/Product-card"),
-        productInfo: () => import("components/Product/Review/Product-Info")
-
-
+    productInfo: () => import("components/Product/Review/Product-Info")
   },
   data() {
     return {
-      items: []
+      items: [],
+      numberOfItems: 1
     };
   },
   methods: {
@@ -165,6 +166,16 @@ export default {
 
           imageSrc: "https://placeimg.com/500/400/tech?t=" + Math.random()
         });
+      }
+    },
+    inccount() {
+      if (this.numberOfItems > 0) {
+        this.numberOfItems++;
+      }
+    },
+    decCount() {
+      if (this.numberOfItems > 1) {
+        this.numberOfItems--;
       }
     }
   },

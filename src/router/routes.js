@@ -1,5 +1,10 @@
 const routes = [
   {
+    path: "/cart-overview",
+    component: () => import("layouts/CartLayout.vue"),
+    children: [{ path: "", component: () => import("pages/Cart.vue") }]
+  },
+  {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
     children: [
@@ -7,11 +12,7 @@ const routes = [
       { path: "/:productTitle", component: () => import("pages/_Product.vue") }
     ]
   },
-  {
-    path: "/cart-overview",
-    component: () => import("layouts/CartLayout.vue"),
-    children: [{ path: "", component: () => import("pages/Cart.vue") }]
-  },
+
   {
     path: "/search",
     component: () => import("layouts/SearchLayout.vue"),
