@@ -105,7 +105,9 @@ module.exports = function(/* ctx */) {
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       workboxPluginMode: "GenerateSW", // 'GenerateSW' or 'InjectManifest'
-      workboxOptions: {}, // only for GenerateSW
+      // workboxOptions: {}, // only for GenerateSW
+      workboxOptions: { skipWaiting: true },
+
       manifest: {
         name: `ebeano`,
         short_name: `ebeano`,
@@ -113,7 +115,7 @@ module.exports = function(/* ctx */) {
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",
-        theme_color: "#027be3",
+        theme_color: "#fff",
         icons: [
           {
             src: "icons/icon-128x128.png",

@@ -13,7 +13,7 @@
 .border-input-bold {
   border: 1px solid $grey-6;
 }
-.border-input-bold:focus-within{
+.border-input-bold:focus-within {
   border-color: $amber-9 !important;
 }
 .disabled-input {
@@ -40,8 +40,15 @@ body.body--dark {
   .card {
     border: 1px solid $grey-7;
   }
-  .border-bold{
+  .border-bold {
     border: 1px solid $grey-7;
   }
 }
 //
+
+.q-pt-xxxl {
+  padding-top: 90px !important;
+}
+.layout-shadow {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1), 0 0 15px 0 rgba(0, 0, 0, 0.1);
+}

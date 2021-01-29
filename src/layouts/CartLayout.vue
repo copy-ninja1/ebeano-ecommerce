@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header
-      elevated
+      :reveal="$q.screen.gt.sm"
       class=" text-grey-9"
       :class="{ 'bg-white': !$q.dark.isActive, 'bg-dark': $q.dark.isActive }"
     >
@@ -9,19 +9,21 @@
         <q-btn flat dense round icon="menu" aria-label="Menu" />
         <q-btn
           flat
+          class="lt-md"
           round
           dense
           to="/search"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-magnify"
         />
-        <q-space></q-space>
+        <q-space class="lt-md"></q-space>
 
         <router-link to="/">
           <img
             style="width:100px"
             src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
         /></router-link>
+        <q-space class="gt-sm"></q-space>
 
         <div
           class="custom-shadow q-px-sm disabled-input border-input-bold gt-sm"
@@ -36,7 +38,7 @@
             v-model="search"
           >
             <template v-slot:append>
-              <q-btn round dense flat icon="mdi-magnify" />
+              <q-btn round dense to="/search" flat icon="mdi-magnify" />
             </template>
           </q-input>
         </div>
@@ -48,7 +50,7 @@
           dense
           to="/cart-overview"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
-          icon="mdi-cart-outline"
+          icon="mdi-shopping-outline"
         />
         <q-btn
           @click="darkMode(!$q.dark.isActive)"
@@ -60,11 +62,54 @@
           round
         ></q-btn>
       </q-toolbar>
+
+      <div class="row justify-center lt-md" v-if="$q.screen.lt.md">
+        <div class="q-pa-xs q-gutter-xs">
+          <!-- <div class="col" v-for="btn in smBtn" :key="btn.label"> -->
+          <q-btn
+            color="primary"
+            flat
+            v-for="btn in smBtn"
+            :key="btn.label"
+            padding="sm"
+            no-caps
+          >
+            <div>
+              <q-icon :name="btn.icon"></q-icon>
+              <p class="q-mb-none">{{ btn.label }}</p>
+            </div>
+          </q-btn>
+        </div>
+      </div>
     </q-header>
 
-
-    <q-page-container :class="{ 'bg-grey-2': !$q.dark.isActive }">
+    <q-page-container
+      :class="{ 'bg-grey-2': !$q.dark.isActive, 'q-pt-xxxl': $q.screen.gt.sm }"
+    >
       <router-view />
+      <q-page-sticky expand position="top" class="gt-sm layout-shadow">
+        <q-toolbar class="bg-purple-5 text-white">
+          <!-- <div class="row justify-center">
+            <div class="col-md-11">-->
+
+          <div class="row justify-center full-width">
+            <div class="q-py-sm q-gutter-sm">
+              <q-btn
+                color="primary"
+                rounded
+                unelevated
+                no-caps
+                style="min-width:120px"
+                :label="n"
+                v-for="n in btn"
+                :key="n"
+              />
+            </div>
+          </div>
+          <!--  </div>
+          </div> -->
+        </q-toolbar>
+      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
@@ -77,6 +122,23 @@ export default {
     return {
       leftDrawerOpen: false,
       search: "",
+       btn: [
+        "Computers",
+        "Fashion",
+        "Shoes",
+        "phones",
+        "Home and Kitchen",
+        "Baby toys",
+        "sports",
+        "Other Categories"
+      ],
+      smBtn: [
+        { icon: "mdi-laptop", label: "Computers" },
+        { icon: "mdi-tshirt-crew", label: "Fashion" },
+        { icon: "mdi-shoe-formal", label: "Shoes" },
+        { icon: "mdi-phone", label: "phones" },
+        { icon: "mdi-weight-lifter", label: "sports" }
+      ]
     };
   },
   methods: {

@@ -1,28 +1,29 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header
-      elevated
+      :reveal="$q.screen.gt.sm"
       class=" text-grey-9"
       :class="{ 'bg-white': !$q.dark.isActive, 'bg-dark': $q.dark.isActive }"
     >
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" />
         <q-btn
-          flat class="lt-md"
+          flat
+          class="lt-md"
           round
           dense
           to="/search"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-magnify"
         />
-        <q-space  class="lt-md"></q-space>
+        <q-space class="lt-md"></q-space>
 
         <router-link to="/">
           <img
             style="width:100px"
             src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
         /></router-link>
-        <q-space  class="gt-sm"></q-space>
+        <q-space class="gt-sm"></q-space>
 
         <div
           class="custom-shadow q-px-sm disabled-input border-input-bold gt-sm"
@@ -49,7 +50,7 @@
           dense
           to="/cart-overview"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
-          icon="mdi-cart-outline"
+          icon="mdi-shopping-outline"
         />
         <q-btn
           @click="darkMode(!$q.dark.isActive)"
@@ -61,72 +62,85 @@
           round
         ></q-btn>
       </q-toolbar>
+
+      <div class="row justify-center lt-md" v-if="$q.screen.lt.md">
+        <div class="q-pa-xs q-gutter-xs">
+          <!-- <div class="col" v-for="btn in smBtn" :key="btn.label"> -->
+          <q-btn
+            color="primary"
+            flat
+            v-for="btn in smBtn"
+            :key="btn.label"
+            padding="sm"
+            no-caps
+          >
+            <div>
+              <q-icon :name="btn.icon"></q-icon>
+              <p class="q-mb-none">{{ btn.label }}</p>
+            </div>
+          </q-btn>
+        </div>
+      </div>
     </q-header>
 
-
-    <q-page-container :class="{ 'bg-grey-2': !$q.dark.isActive }">
+    <q-page-container
+      :class="{ 'bg-grey-2': !$q.dark.isActive, 'q-pt-xxxl': $q.screen.gt.sm }"
+    >
       <router-view />
+      <q-page-sticky expand position="top" class="gt-sm layout-shadow">
+        <q-toolbar class="bg-purple-5 text-white">
+          <!-- <div class="row justify-center">
+            <div class="col-md-11">-->
+
+          <div class="row justify-center full-width">
+            <div class="q-py-sm q-gutter-sm">
+              <q-btn
+                color="primary"
+                rounded
+                unelevated
+                no-caps
+                style="min-width:120px"
+                :label="n"
+                v-for="n in btn"
+                :key="n"
+              />
+            </div>
+          </div>
+          <!--  </div>
+          </div> -->
+        </q-toolbar>
+      </q-page-sticky>
     </q-page-container>
     <bottom-tab v-if="$route.path.split('/').length < 3"></bottom-tab>
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from "components/EssentialLink.vue";
 import bottomTab from "components/Bottom-Tab";
-const linksData = [
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev"
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework"
-  },
-  {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev"
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev"
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev"
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev"
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev"
-  }
-];
-
 export default {
   name: "MainLayout",
-  components: { EssentialLink, bottomTab },
+  components: { bottomTab },
   data() {
     return {
       leftDrawerOpen: false,
-      essentialLinks: linksData,
-      search: ""
+      search: "",
+      btn: [
+        "Computers",
+        "Fashion",
+        "Shoes",
+        "Glass",
+        "Home and Kitchen",
+        "Baby toys",
+        "sports",
+        "Other Categories"
+      ],
+      smBtn: [
+        { icon: "mdi-laptop", label: "Computers" },
+        { icon: "mdi-tshirt-crew", label: "Fashion" },
+        { icon: "mdi-shoe-formal", label: "Shoes" },
+        { icon: "mdi-phone", label: "phones" },
+        { icon: "mdi-weight-lifter", label: "sports" }
+      ]
     };
   },
   methods: {
