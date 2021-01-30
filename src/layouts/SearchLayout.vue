@@ -68,11 +68,11 @@
         <!-- <q-space></q-space> -->
 
         <q-toolbar-title class="text-center">
-           <router-link to="/">
-          <img
-            style="width:100px"
-            src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
-        /></router-link>
+          <router-link to="/">
+            <img
+              style="width:100px"
+              src="https://ebeanomarket.com/assets/images/ebeano-logo.png"
+          /></router-link>
         </q-toolbar-title>
         <!-- <q-space></q-space> -->
         <q-btn
@@ -117,20 +117,18 @@
           </div>
         </div>
       </div>
-      <div class="q-pt-md" :class="{ 'q-pa-sm': $q.screen.gt.sm }">
-        <horizontal-btn>
-          <q-btn
-            no-caps
-            :color="$q.dark.isActive ? 'grey-9' : 'white'"
-            class="q-mx-sm"
-            :text-color="$q.dark.isActive ? 'white' : 'grey-7'"
-            outline
-            rounded
-            v-for="(opt, index) in marketOpt"
-            :key="index"
-            >{{ opt.title }}</q-btn
+      <div class="q-pt-md q-pb-sm relative-position">
+        <div class="text-h6 text-center q-my-xs">
+          Search <q-btn style="position: absolute;right: 10px;">Filter</q-btn>
+        </div>
+        <div class="text-center">
+          <p
+            class="q-mb-none text-caption"
+            :class="{ 'text-grey-7': !$q.dark.isActive ,'text-grey-4':$q.dark.isActive}"
           >
-        </horizontal-btn>
+            1-20 of 1,000 results
+          </p>
+        </div>
       </div>
     </q-header>
     <q-page-container :class="{ 'bg-grey-2': !$q.dark.isActive }">
