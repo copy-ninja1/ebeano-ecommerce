@@ -67,7 +67,7 @@
         <div class="q-pa-xs q-gutter-xs">
           <!-- <div class="col" v-for="btn in smBtn" :key="btn.label"> -->
           <q-btn
-            color="primary"
+            :color="$q.dark.isActive ? 'purple-1' : 'primary'"
             flat
             v-for="btn in smBtn"
             :key="btn.label"

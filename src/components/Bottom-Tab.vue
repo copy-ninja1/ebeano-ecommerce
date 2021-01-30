@@ -11,14 +11,14 @@
         <q-route-tab
           :icon="$route.fullPath == '/' ? 'mdi-home' : 'mdi-home-outline'"
           label="home"
-          :active-class="$q.dark.isActive ? 'text-purple-2' : 'text-primary'"
+          :active-class="$q.dark.isActive ? 'text-purple-1' : 'text-primary'"
           to="/"
           exact
         />
         <q-route-tab
           :icon="$route.fullPath == '/##' ? 'mdi-search-web' : 'mdi-magnify'"
           label="search"
-          :active-class="$q.dark.isActive ? 'text-purple-2' : 'text-primary'"
+          :active-class="$q.dark.isActive ? 'text-purple-1' : 'text-primary'"
           to="/##"
           exact
         />
@@ -27,7 +27,7 @@
             $route.fullPath == '/#' ? 'mdi-account' : 'mdi-account-outline'
           "
           label="Profile"
-          :active-class="$q.dark.isActive ? 'text-purple-2' : 'text-primary'"
+          :active-class="$q.dark.isActive ? 'text-purple-1' : 'text-primary'"
           to="/#"
           exact
         />
