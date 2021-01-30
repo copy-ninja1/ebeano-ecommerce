@@ -135,10 +135,10 @@ export default {
         "Other Categories"
       ],
       smBtn: [
+        {icon:'mdi-layers-triple',label:'Browse All'},
         { icon: "mdi-laptop", label: "Computers" },
         { icon: "mdi-tshirt-crew", label: "Fashion" },
         { icon: "mdi-shoe-formal", label: "Shoes" },
-        { icon: "mdi-phone", label: "phones" },
         { icon: "mdi-weight-lifter", label: "sports" }
       ]
     };
