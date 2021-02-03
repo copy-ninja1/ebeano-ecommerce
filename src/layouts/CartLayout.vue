@@ -53,6 +53,13 @@
           icon="mdi-shopping-outline"
         />
         <q-btn
+          to="/account/login"
+          icon="mdi-account"
+          :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
+          flat
+          round
+        ></q-btn>
+        <q-btn
           @click="darkMode(!$q.dark.isActive)"
           :icon="
             `${$q.dark.isActive ? 'mdi-weather-night' : 'mdi-weather-sunny'}`
@@ -114,7 +121,6 @@
   </q-layout>
 </template>
 
-
 <script>
 export default {
   name: "CartLayout",
@@ -122,7 +128,7 @@ export default {
     return {
       leftDrawerOpen: false,
       search: "",
-       btn: [
+      btn: [
         "Computers",
         "Fashion",
         "Shoes",
@@ -133,7 +139,7 @@ export default {
         "Other Categories"
       ],
       smBtn: [
-        {icon:'mdi-layers',label:'Browse'},
+        { icon: "mdi-layers", label: "Browse" },
         { icon: "mdi-laptop", label: "Computers" },
         { icon: "mdi-tshirt-crew", label: "Fashion" },
         { icon: "mdi-shoe-formal", label: "Shoes" },

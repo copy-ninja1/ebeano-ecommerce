@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {String} file - this file name of the page
+ */
+const page = file => import(`pages/${file}.vue`);
+
 const routes = [
   {
     path: "/cart-overview",
@@ -16,6 +22,29 @@ const routes = [
     children: [
       { path: "", component: () => import("pages/Index.vue") },
       { path: "/:productTitle", component: () => import("pages/_Product.vue") }
+    ]
+  },
+
+  {
+    path: "/account",
+    redirect: "/account/login",
+    component: () => import("layouts/AccountLayout.vue"),
+    children: [
+      {
+        path: "/account/login",
+        name: "login",
+        component: () => page("Accounts/Login")
+      },
+      {
+        path: "/account/signup",
+        name: "signup",
+        component: () => page("Accounts/SignUp")
+      },
+      {
+        path: "/forgot-password",
+        name: "forgotPassword",
+        component: () => page("Accounts/ForgotPassword")
+      }
     ]
   },
   // Always leave this as last one,

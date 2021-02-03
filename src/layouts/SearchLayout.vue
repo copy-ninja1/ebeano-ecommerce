@@ -39,6 +39,13 @@
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-cart-outline"
         />
+         <q-btn
+          to="/account/login"
+          icon="mdi-account"
+          :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
+          flat
+          round
+        ></q-btn>
         <q-btn
           @click="darkMode(!$q.dark.isActive)"
           :icon="
@@ -83,6 +90,13 @@
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-cart-outline"
         />
+         <q-btn
+          to="/account/login"
+          icon="mdi-account"
+          :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
+          flat
+          round
+        ></q-btn>
         <q-btn
           @click="darkMode(!$q.dark.isActive)"
           :icon="

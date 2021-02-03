@@ -53,6 +53,13 @@
           icon="mdi-shopping-outline"
         />
         <q-btn
+          to="/account/login"
+          icon="mdi-account"
+          :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
+          flat
+          round
+        ></q-btn>
+        <q-btn
           @click="darkMode(!$q.dark.isActive)"
           :icon="
             `${$q.dark.isActive ? 'mdi-weather-night' : 'mdi-weather-sunny'}`
@@ -61,6 +68,7 @@
           flat
           round
         ></q-btn>
+        <!--  -->
       </q-toolbar>
 
       <div class="row justify-center lt-md" v-if="$q.screen.lt.md">
@@ -135,7 +143,7 @@ export default {
         "Other Categories"
       ],
       smBtn: [
-        {icon:'mdi-layers',label:'Browse'},
+        { icon: "mdi-layers", label: "Browse" },
         { icon: "mdi-laptop", label: "Computers" },
         { icon: "mdi-tshirt-crew", label: "Fashion" },
         { icon: "mdi-shoe-formal", label: "Shoes" },
