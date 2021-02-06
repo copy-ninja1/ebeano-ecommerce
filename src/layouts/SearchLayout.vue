@@ -39,7 +39,7 @@
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-cart-outline"
         />
-         <q-btn
+        <q-btn
           to="/account/login"
           icon="mdi-account"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
@@ -73,7 +73,6 @@
           round
         ></q-btn>
         <!-- <q-space></q-space> -->
-
         <q-toolbar-title class="text-center">
           <router-link to="/">
             <img
@@ -90,7 +89,7 @@
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
           icon="mdi-cart-outline"
         />
-         <q-btn
+        <q-btn
           to="/account/login"
           icon="mdi-account"
           :class="`${$q.dark.isActive ? 'text-grey-2' : 'text-dark'}`"
@@ -138,7 +137,10 @@
         <div class="text-center">
           <p
             class="q-mb-none text-caption"
-            :class="{ 'text-grey-7': !$q.dark.isActive ,'text-grey-4':$q.dark.isActive}"
+            :class="{
+              'text-grey-7': !$q.dark.isActive,
+              'text-grey-4': $q.dark.isActive
+            }"
           >
             1-20 of 1,000 results
           </p>

@@ -17,6 +17,17 @@ const routes = [
     children: [{ path: "", component: () => import("pages/Search.vue") }]
   },
   {
+    path: "/category/:category",
+    component: () => import("layouts/Blank.vue"),
+    children: [
+      { path: "", component: () => import("pages/_Category/_Index.vue") },
+      // {
+      //   path: "/category/:category/:product",
+      //   component: () => import("pages/_Category/_Product.vue")
+      // }
+    ]
+  },
+  {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
     children: [

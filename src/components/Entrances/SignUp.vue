@@ -33,7 +33,7 @@
       <q-toggle
         v-model="accept"
         label="I have agreed to the terms and conditions of services."
-      />&nbsp;<router-link to="//terms.kudibase.com">
+      />&nbsp;<router-link to="//terms.ebeano.com">
         <span class="text-primary">ebeano T&C</span>
       </router-link>
     </div>

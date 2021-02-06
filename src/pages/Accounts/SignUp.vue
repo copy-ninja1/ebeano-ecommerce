@@ -12,15 +12,15 @@
         >
           <q-card-section>
             <div class="text-center q-my-sm">
-              <h1 class="text-h4">Welcome to Kudibase</h1>
+              <h1 class="text-h4">Welcome to Ebeano</h1>
               <p class="text-body1 text-grey-7">
-                Join millions of traders<br />
-                in sharing the kudibase experience
+                Join millions of Buyers<br />
+                in the ebeano market to experience life
               </p>
             </div>
             <div style="margin: auto; width: fit-content;">
               <router-link to="/">
-                  <img style="width:120px" src="/ebeano-logo.png" alt="logo" />
+                <img style="width:120px" src="/ebeano-logo.png" alt="logo" />
               </router-link>
             </div>
           </q-card-section>

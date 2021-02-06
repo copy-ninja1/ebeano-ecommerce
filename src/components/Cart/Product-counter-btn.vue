@@ -1,0 +1,48 @@
+<template>
+  <div>
+    <span class="input-number-decrement">–</span>
+    <input class="input-number" type="text" value="1" min="0" max="10" />
+    <span class="input-number-increment">+</span>
+  </div>
+</template>
+<style lang="scss" scoped>
+.input-number {
+  width: 80px;
+  padding: 0 12px;
+  vertical-align: top;
+  text-align: center;
+  outline: none;
+}
+
+.input-number,
+.input-number-decrement,
+.input-number-increment {
+  border: 1px solid #ccc;
+  height: 40px;
+  user-select: none;
+}
+.input-number-decrement,
+.input-number-increment {
+  display: inline-block;
+  width: 30px;
+  line-height: 38px;
+  background: #f1f1f1;
+  color: #444;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:active {
+    background: #ddd;
+  }
+}
+.input-number-decrement {
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.input-number-increment {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+</style>

@@ -7,11 +7,13 @@
       :class="contentClass"
     >
       <div class="q-pa-xs" style="height:160px">
-        <img
-          class="rounded-borders full-width full-height"
-          :class="{ card: flat }"
-          src="https://ebeanomarket.com/assets/images/banners/slider2.jpg"
-        />
+        <router-link :to="`/${product.title}`">
+          <img
+            class="rounded-borders full-width full-height"
+            :class="{ card: flat }"
+            src="https://ebeanomarket.com/assets/images/banners/slider2.jpg"
+          />
+        </router-link>
       </div>
       <q-list>
         <q-item>
@@ -57,7 +59,7 @@
             :label="'$' + 3 * product.price"
           />
         </div>
-        <q-btn-group spread >
+        <q-btn-group spread>
           <q-btn
             :color="$q.dark.isActive ? 'grey-9' : 'white'"
             :text-color="$q.dark.isActive ? 'white' : 'primary'"
@@ -81,16 +83,18 @@
       <q-list>
         <q-item class="q-px-sm">
           <q-item-section style="padding-right:8px" avatar>
-            <q-avatar
-              rounded
-              :size="
-                $q.screen.lt.sm ? '60px' : $q.screen.lt.md ? '80px' : '100px'
-              "
-            >
-              <img
-                src="https://ebeanomarket.com/assets/images/banners/slider2.jpg"
-              />
-            </q-avatar>
+            <router-link :to="`/${product.title}`">
+              <q-avatar
+                rounded
+                :size="
+                  $q.screen.lt.sm ? '60px' : $q.screen.lt.md ? '80px' : '100px'
+                "
+              >
+                <img
+                  src="https://ebeanomarket.com/assets/images/banners/slider2.jpg"
+                />
+              </q-avatar>
+            </router-link>
           </q-item-section>
 
           <q-item-section>
